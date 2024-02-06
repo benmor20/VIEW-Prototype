@@ -6,6 +6,9 @@ class Vehicle(models.Model):
     vehicle_model = models.CharField(max_length=50)
     vehicle_year = models.IntegerField()
 
+    def __str__(self) -> str:
+        return f'{self.vehicle_year} {self.vehicle_make} {self.vehicle_model}'
+
 
 class Scan(models.Model):
     vehicle = models.ForeignKey(Vehicle, on_delete=models.PROTECT)
