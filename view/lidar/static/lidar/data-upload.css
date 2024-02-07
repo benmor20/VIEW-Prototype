@@ -506,7 +506,7 @@
   display: flex;
   margin-top: 1rem;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 .data-upload-text07 {
   color: rgb(0, 0, 0);
@@ -563,7 +563,7 @@
   display: flex;
   margin-top: 1rem;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 .data-upload-text10 {
   color: rgb(0, 0, 0);
