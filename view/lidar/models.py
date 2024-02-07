@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import validate_comma_separated_integer_list
 
 
 class Vehicle(models.Model):
@@ -32,3 +33,10 @@ class Scan(models.Model):
     @property
     def eye_z_m(self) -> float:
         return (self.eye_z_ft * 12 + self.eye_z_in * (-1 if self.eye_z_ft < 0 else 1)) * 0.0254
+
+
+class CompletedScan(models.Model):
+    raw_scan = models.ForeignKey(Scan, on_delete=models.PROTECT)
+    nvp_xs = models.CharField(validators=[validate_comma_separated_integer_list], max_length=2160)
+    nvp_ys = models.CharField(validators=[validate_comma_separated_integer_list], max_length=2160)
+    area = models.FloatField()
