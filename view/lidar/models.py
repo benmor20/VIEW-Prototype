@@ -13,12 +13,12 @@ class Vehicle(models.Model):
 class Scan(models.Model):
     vehicle = models.ForeignKey(Vehicle, on_delete=models.PROTECT)
     driver_side_start = models.BooleanField()
-    eye_x_ft = models.IntegerField()
-    eye_x_in = models.FloatField()
-    eye_y_ft = models.IntegerField()
-    eye_y_in = models.FloatField()
-    eye_z_ft = models.IntegerField()
-    eye_z_in = models.FloatField()
+    eye_x_ft = models.IntegerField(default=0)
+    eye_x_in = models.FloatField(default=0)
+    eye_y_ft = models.IntegerField(default=0)
+    eye_y_in = models.FloatField(default=0)
+    eye_z_ft = models.IntegerField(default=0)
+    eye_z_in = models.FloatField(default=0)
     lidar_scan = models.FileField(upload_to='lidar_scans/')
 
     @property

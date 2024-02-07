@@ -11,5 +11,4 @@ urlpatterns = [
     path('faq/', views.faq, name='faq'),
     path('vehicle_database_loading/', views.vehicle_database_loading, name='vehicle_database_loading'),
     path('vehicle_database_table/', views.vehicle_database_table, name='vehicle_database_table'),
-    path('new_data/', views.new_data, name='new_data'),
 ]

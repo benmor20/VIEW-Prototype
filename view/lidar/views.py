@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Vehicle, Scan
+from django.http import HttpResponseRedirect
+from .forms import ScanForm
 
 
 def index(request):
@@ -11,7 +12,14 @@ def add_vehicle(request):
 
 
 def data_upload(request):
-    return render(request, 'lidar/data-upload.html', {})
+    if request.method == 'POST':
+        form = ScanForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/add_vehicle')
+    else:
+        form = ScanForm()
+    return render(request, 'lidar/data-upload.html', {'form': form})
 
 
 def faq(request):
@@ -24,11 +32,3 @@ def vehicle_database_loading(request):
 
 def vehicle_database_table(request):
     return render(request, 'lidar/vehicle-database-table.html', {})
-
-
-def new_data(request):
-    vehicle = Vehicle.objects.get(vehicle_year=2011)
-    scan = Scan(
-        vehicle=vehicle,
-        lidar_scan=request.POST[]
-    )
