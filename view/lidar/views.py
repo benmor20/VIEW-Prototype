@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Vehicle, Scan
 
 
 def index(request):
@@ -23,3 +24,11 @@ def vehicle_database_loading(request):
 
 def vehicle_database_table(request):
     return render(request, 'lidar/vehicle-database-table.html', {})
+
+
+def new_data(request):
+    vehicle = Vehicle.objects.get(vehicle_year=2011)
+    scan = Scan(
+        vehicle=vehicle,
+        lidar_scan=request.POST[]
+    )

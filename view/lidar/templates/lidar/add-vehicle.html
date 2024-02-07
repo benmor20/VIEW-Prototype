@@ -91,9 +91,10 @@
     </style>
   </head>
   <body>
+    {% load static %}
     <link rel="stylesheet" href="{% static 'lidar/style.css' %}" />
     <div>
-      <link href="{% static 'lidar/add_vehicle.css' %}" rel="stylesheet" />
+      <link href="{% static 'lidar/add-vehicle.css' %}" rel="stylesheet" />
 
       <div class="add-vehicle-container">
         <div class="header-v2-container header-v2-root-class-name1">
@@ -118,7 +119,7 @@
                 </a>
               </nav>
               <div class="header-v2-buttons">
-                <a href="{% url 'lidar:add-vehicle' %}" class="header-v2-add-vehicle button">
+                <a href="{% url 'lidar:add_vehicle' %}" class="header-v2-add-vehicle button">
                   <span class="header-v2-text03">
                     <span>Add Vehicle</span>
                     <br />
