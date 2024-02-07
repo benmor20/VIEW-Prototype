@@ -93,7 +93,7 @@
   <body>
     <link rel="stylesheet" href="{% static 'lidar/style.css' %}" />
     <div>
-      <link href="{% static 'lidar/add-vehicle.css' %}" rel="stylesheet" />
+      <link href="{% static 'lidar/add_vehicle.css' %}" rel="stylesheet" />
 
       <div class="add-vehicle-container">
         <div class="header-v2-container header-v2-root-class-name1">
@@ -108,7 +108,7 @@
                   <span>Home</span>
                 </a>
                 <a
-                  href="{% url 'lidar:vehicle-database-table' %}"
+                  href="{% url 'lidar:vehicle_database_table' %}"
                   class="header-v2-navlink1"
                 >
                   <span>Vehicle Database</span>
@@ -125,7 +125,7 @@
                   </span>
                 </a>
                 <a
-                  href="{% url 'lidar:add-vehicle' %}"
+                  href="{% url 'lidar:add_vehicle' %}"
                   class="header-v2-add-vehicle1 button"
                 >
                   <span class="ButtonText">Add Vehicle</span>
@@ -282,7 +282,7 @@
               </div>
             </div>
             <div class="add-vehicle-container7">
-              <a href="{% url 'lidar:data-upload' %}" class="add-vehicle-button button">
+              <a href="{% url 'lidar:data_upload' %}" class="add-vehicle-button button">
                 <span class="ButtonText">
                   <span>Get Started</span>
                   <br />
